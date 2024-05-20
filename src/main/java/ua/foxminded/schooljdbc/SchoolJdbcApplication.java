@@ -26,9 +26,7 @@ import ua.foxminded.schooljdbc.dao.StudentDaoImpl;
 import ua.foxminded.schooljdbc.models.Group;
 
 @SpringBootApplication
-//@Component
 @ComponentScan("ua.foxminded.schooljdbc")
-//@EnablePostgRepositories("ua.foxminded.schooljdbc")
 public class SchoolJdbcApplication implements CommandLineRunner {
 	
 	public static void main(String[] args) {
@@ -105,8 +103,6 @@ public class SchoolJdbcApplication implements CommandLineRunner {
 	
 	@SuppressWarnings("resource")
 	public static void findGroups(int studentsNumber, AnnotationConfigApplicationContext context) {
-
-//		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ConfigDB.class, StudentDaoImpl.class);
 		
 		if (studentsNumber < 1) {
 			throw new IllegalArgumentException("Number of imput students must be more then 1");
@@ -120,7 +116,6 @@ public class SchoolJdbcApplication implements CommandLineRunner {
 				System.out.print(key + "   ");
 			}
 		});
-//		context.close();
 	}
 	
 	public static Map<String, Integer> calcStudentsInGroup(List<Group> studentsInGroups) {

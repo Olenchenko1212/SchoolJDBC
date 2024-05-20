@@ -20,7 +20,6 @@ import ua.foxminded.schooljdbc.models.Student;
 
 
 @Repository
-//@Component
 @ComponentScan("ua.foxminded.schooljdbc.dao")
 
 public class StudentDaoImpl implements StudentDao {
@@ -40,9 +39,7 @@ public class StudentDaoImpl implements StudentDao {
 										+ "WHERE student_id = :id;\r\n"
 										+ "DELETE FROM school.enrollments \r\n"
 										+ "WHERE student_id = :id;";
-//	@Autowired
 	private JdbcTemplate jdbcTemplate;
-//	@Autowired
 	private  NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	
 	
